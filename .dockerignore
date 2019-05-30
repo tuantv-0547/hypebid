@@ -1,0 +1,12 @@
+.git
+.gitignore
+
+# Rails
+*.rbc
+tmp/*
+public/system
+coverage/
+spec/tmp
+.bundle
+.ruby-version
+.ruby-gemset
