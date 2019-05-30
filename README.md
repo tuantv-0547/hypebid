@@ -1,24 +1,22 @@
-# README
+# HypeBid Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+HypeBid is a traning project. The major purpose is building a stock market of things - Buy and Sell authentic streetwear.
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+Development environment requires [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/). Please install this before you start.
 
-* System dependencies
+```bash
+cp .env.example .env
 
-* Configuration
+docker-compose up
+```
 
-* Database creation
+**NOTE**: Please run this commands before you send a pull request:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+docker-compose exec app rspec spec/
+docker-compose exec app rubocop app/ lib/ config/
+docker-compose exec app bundle audit
+docker-compose exec app brakeman
+```
