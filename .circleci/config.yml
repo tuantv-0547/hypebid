@@ -1,0 +1,83 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3-node-browsers-legacy
+        environment:
+          RAILS_ENV: test
+          DATABASE_HOSTNAME: 127.0.0.1
+          DATABASE_PASSWORD: password
+      - image: circleci/mysql:5.7
+        command: mysqld --innodb-large-prefix=1 --innodb-file-format=barracuda --innodb-file-per-table=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --init-connect='SET NAMES utf8mb4; SET CHARACTER SET utf8mb4;'
+        environment:
+          MYSQL_DATABASE: hypebid_test
+          MYSQL_USER: hypebid
+          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: root
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle check --path vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+
+      # Database setup
+      - run:
+          name: Set up database
+          command: bundle exec rails db:schema:load
+
+      # CI tests
+      - run:
+          name: Create report dir
+          command: mkdir /tmp/test-results
+
+      - run:
+          name: Run Rubocop
+          command: |
+            bundle exec rubocop --require rubocop/formatter/checkstyle_formatter \
+                                --format html \
+                                --no-color --rails \
+                                --out /tmp/test-results/rubocop.html app/
+
+      - run:
+          name: Run Brakeman
+          command: bundle exec brakeman -o /tmp/test-results/brakeman.html
+
+      - run:
+          name: Run bundle-audit
+          command: bundle exec bundle-audit check --update > /tmp/test-results/bundle-audit.txt
+
+      - run:
+          name: Run Rspec
+          command: |
+            mkdir ./tmp/coverage
+            bundle exec rspec --format html --out /tmp/test-results/rspec.html spec/
+            mv ./tmp/coverage /tmp/test-results/coverage
+          no_output_timeout: 20m
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

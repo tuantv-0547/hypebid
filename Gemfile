@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.5.1"
+ruby "2.6.3"
 
 gem "rails", "~> 5.2.3"
 gem "mysql2"
@@ -19,12 +19,13 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "shoulda-matchers"
   gem "faker"
-end
-
-group :development do
   gem "brakeman", require: false
   gem "bundler-audit"
   gem "rubocop", require: false
+  gem "rubocop-checkstyle_formatter", require: false
+end
+
+group :development do
   gem "bullet"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
@@ -33,6 +34,9 @@ end
 
 group :test do
   gem "database_cleaner"
+  gem "simplecov", require: false
+  gem "simplecov-json"
+  gem "simplecov-rcov", require: false
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

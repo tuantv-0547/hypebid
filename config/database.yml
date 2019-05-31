@@ -1,9 +1,9 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: <%= ENV["DATABASE_USERNAME"] %>
+  username: hypebid
   password: <%= ENV["DATABASE_PASSWORD"] %>
-  host: <%= ENV["DATABASE_HOST"] %>
+  host: <%= ENV["DATABASE_HOSTNAME"] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
