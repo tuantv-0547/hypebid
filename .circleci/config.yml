@@ -10,6 +10,7 @@ jobs:
         environment:
           RAILS_ENV: test
           DATABASE_HOSTNAME: 127.0.0.1
+          DATABASE_USERNAME: hypebid
           DATABASE_PASSWORD: password
       - image: circleci/mysql:5.7
         command: mysqld --innodb-large-prefix=1 --innodb-file-format=barracuda --innodb-file-per-table=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --init-connect='SET NAMES utf8mb4; SET CHARACTER SET utf8mb4;'
