@@ -1,0 +1,46 @@
+@import 'font-awesome';
+@import 'bootstrap';
+@import 'bootstrap.min';
+
+/************************************SKELETON************************************/
+
+body {
+  background-color: #f1f6f7;
+  color: #595959;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 15px;
+  opacity: 0.95;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+  font-weight: 400;
+  text-decoration: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #232323;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container-padding {
+  padding-top: 120px;
+}
