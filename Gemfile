@@ -1,28 +1,30 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.6.3"
 
-gem "rails", "~> 5.2.3"
+gem "bcrypt", "~> 3.1.7"
+gem "bootsnap", ">= 1.1.0", require: false
 gem "mysql2"
 gem "puma", "~> 3.11"
-gem "bcrypt", "~> 3.1.7"
+gem "rails", "~> 5.2.3"
 
 gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
 gem "turbolinks", "~> 5"
-gem "bootsnap", ">= 1.1.0", require: false
+gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
-  gem "pry"
-  gem "rspec-rails", "~> 3.7"
-  gem "factory_bot_rails"
-  gem "shoulda-matchers"
-  gem "faker"
   gem "brakeman", require: false
   gem "bundler-audit"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "pry"
+  gem "rspec-rails", "~> 3.7"
   gem "rubocop", require: false
   gem "rubocop-checkstyle_formatter", require: false
+  gem "shoulda-matchers"
 end
 
 group :development do
