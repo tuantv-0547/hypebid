@@ -60,7 +60,7 @@ jobs:
             bundle exec rubocop --require rubocop/formatter/checkstyle_formatter \
                                 --format html \
                                 --no-color --rails \
-                                --out /tmp/test-results/rubocop.html app/
+                                --out /tmp/test-results/rubocop.html app/ lib/ config/
 
       - run:
           name: Run Brakeman

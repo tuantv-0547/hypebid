@@ -18,7 +18,7 @@ docker-compose up
 
 ```bash
 docker-compose exec app rspec spec/
-docker-compose exec app rubocop app/ lib/ config/
+docker-compose exec app rubocop --rails app/ lib/ config/
 docker-compose exec app bundle audit
 docker-compose exec app brakeman
 ```
