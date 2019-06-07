@@ -1,0 +1,39 @@
+<% provide(:title, t(".add_new_product")) %>
+<% provide(:button_text, t(".create_product")) %>
+<h1><%= t ".add_new_product" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @product] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_area :name, placeholder: t(".name") %>
+
+      <%= f.label :style %>
+      <%= f.text_area :style, placeholder: t(".style") %>
+
+      <%= f.label :color_way %>
+      <%= f.text_area :color_way, placeholder: t(".color_way") %>
+
+      <%= f.label :retail_price %>
+      <%= f.text_area :retail_price, placeholder: t(".retail_price") %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: t(".description") %>
+
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+
+      <%= f.label :release_date %>
+      <%= f.date_select :release_date, :order => [:month, :day, :year] %>
+
+      <%= f.select :category_id do %>
+        <% @category.each do |c| -%>
+          <%= content_tag :option, c.name, value: c.id %>
+        <% end %>
+      <% end %>
+      
+      <%= f.submit t(".create_product"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
