@@ -1,0 +1,45 @@
+<% provide(:title, t(".products")) %>
+<div class="row">
+  <div class="col-lg-12">
+    <!-- search -->
+    <%= link_to t(".create_new_product"), new_admin_product_path, class: "btn btn-success" %>
+    <table width="100%" class="table table-bordered table-hover" id="datatable">
+      <thead>
+        <tr>
+          <th><%= t ".stt" %></th>
+          <th><%= t ".products" %></th>
+          <th><%= t ".description" %></th>
+          <th><%= t ".image" %></th>
+          <th><%= t ".style" %></th>
+          <th><%= t ".retail_price" %></th>
+          <th><%= t ".color_way" %></th>
+          <th><%= t ".release_date" %></th>
+          <th colspan="2"><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each_with_index do |product, index| %>
+        <tr>
+          <td><%= create_index params[:page], index, Settings.per_page %></td>
+          <td><%= product.name %></td>
+          <td>
+            <%= product.description %>
+          </td>
+          <td><%= image_tag product.image if product.image.attached? %></td>
+          <td><%= product.style %></td>
+          <td><%= product.retail_price %></td>
+          <td><%= product.color_way %></td>
+          <td><%= product.release_date %></td>
+          <td>
+            <%= link_to t(".edit"), "#TODO-edit", class: "btn btn-warning" %>
+          </td>
+          <td>
+            <%= link_to t(".delete"), "#TODO-delete", class: "btn btn-danger" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @products %>
+  </div>
+</div>

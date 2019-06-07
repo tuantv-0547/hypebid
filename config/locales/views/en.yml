@@ -1,0 +1,26 @@
+en:
+  admin:
+    products:
+      index:
+        products: "Products"
+        create_new_product: "Create new product"
+        stt: "STT"
+        products: "Products"
+        description: "Description"
+        image: "Image"
+        style: "Style"
+        color_way: "Color way"
+        release_date: "Release date"
+        action: "Action"
+        read_more: "Read more..."
+        retail_price: "Retail price"
+        edit: "Edit"
+        delete: "Delete"
+      new:
+        add_new_product: "Add new product"
+        create_product: "Create a product"
+        name: "Name of product...."
+        style: "Style..."
+        color_way: "color way..."
+        description: "Description..."
+        retail_price: "Retail price"
