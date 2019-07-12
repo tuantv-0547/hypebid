@@ -1,0 +1,124 @@
+/************************************
+FOOTER
+************************************/
+
+.footer {
+  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .widget li {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+.footer.primary-footer {
+  background-color: #0b509e;
+  padding-bottom: 40px;
+  padding-top: 53px;
+}
+
+.footer.secondary-footer {
+  background-color: #ffffff;
+  padding: 23px 0;
+}
+
+.footer.secondary-footer ul {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.secondary-footer li {
+  color:#212121;
+}
+
+.footer.secondary-footer a,
+.footer.primary-footer p,
+.footer.secondary-footer p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  line-height: 16px;
+}
+
+.footer.primary-footer p,
+.footer li a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer.secondary-footer p,
+.footer.secondary-footer a {
+  color: #595959;
+}
+
+.custom-title h4,
+.widget-title {
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 22px;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  line-height: 14px;
+}
+
+.custom-title h4 {
+  color: #232323;
+}
+
+/************************************GRADIENT************************************/
+
+.icon-center,
+.quoteform.lightform,
+mark,
+.magnifier,
+.milestone-counter,
+.bgcolor,
+.skills-wrapper .progress-bar,
+.customtitle,
+.site-header.colorfulheader,
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover,
+.contact-details li i,
+.calculateform .btn,
+.case-box:hover,
+.section-title hr,
+.footer.primary-footer,
+.btn-primary,
+.navbar-right .lastlink,
+.section.cl,
+.grd1 {
+  border: 0;
+  color: #ffffff;
+  background: #3ac5c8;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #3ac5c8 1%, #0b509e 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #3ac5c8 1%, #0b509e 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #3ac5c8 1%, #0b509e 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#3ac5c8', endColorstr='#0b509e', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+.header-transparent .lastlink {
+  background: none !important;
+  border: 1px solid #fff !important;
+}

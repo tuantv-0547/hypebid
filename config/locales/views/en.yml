@@ -1,0 +1,19 @@
+en:
+  layouts:
+    header:
+      browse: Browse
+      news: New
+      app: App
+      portfolio: Portfolio
+      about: About
+      faq: FAQ
+      login: Login
+      sign_up: Sign Up
+    footer:
+      recent_updates: Recent Updates
+      popular_releases: Popular Releases
+      air_jordan: Air Jordan
+      adidas: Adidas
+      nike: Nike
+      streetwear: Streetwear
+      copyright: ©2019 StockX.w All Rights Reserved. 
