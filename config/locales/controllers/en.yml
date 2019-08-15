@@ -1,0 +1,7 @@
+en:
+  admin:
+    products:
+      create:
+        create_success: "Created successfuly!"
+        create_unsuccess: "Create unsuccess!"
+        not_found_category: "Category not found"
