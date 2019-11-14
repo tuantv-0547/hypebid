@@ -6,7 +6,7 @@ FactoryBot.define do
     style{Faker::Name.name}
     color_way{Faker::Color.color_name}
     retail_price{1.5}
-    release_date{Faker::Date.between 50.days.ago, Date.today}
+    release_date{Faker::Date.between 50.days.ago, Date.current}
     description{Faker::String.random}
     category
   end
