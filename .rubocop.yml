@@ -1,3 +1,5 @@
+require: rubocop-rails
+
 # This is rubocop configuration file for Framgia's coding style. Enabling and disabling is configured
 # in separate files. This file adds all other parameters apart from Enabled.
 
@@ -484,6 +486,9 @@ Layout/DefEndAlignment:
     - def
 
 ##################### Rails ##################################
+Rails:
+  Enabled: true
+
 Rails/UnknownEnv:
   Environments:
     - production

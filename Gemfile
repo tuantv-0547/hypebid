@@ -24,6 +24,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.9"
   gem "rubocop", require: false
   gem "rubocop-checkstyle_formatter", require: false
+  gem "rubocop-rails"
   gem "shoulda-matchers"
 end
 
