@@ -57,7 +57,7 @@ Metrics/CyclomaticComplexity:
   Description: "Avoid complex methods."
   Enabled: false
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Description: >-
                  Align the elements of an array literal if they span more than
                  one line.
