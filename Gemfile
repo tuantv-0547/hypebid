@@ -5,7 +5,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.6.3"
 
-gem "bcrypt", "~> 3.1.13"
+gem "bcrypt", "~> 3.1.16"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "mysql2"
 gem "puma", "~> 4.3"
