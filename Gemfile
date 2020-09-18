@@ -8,7 +8,7 @@ ruby "2.6.3"
 gem "bcrypt", "~> 3.1.13"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "mysql2"
-gem "puma", "~> 4.3"
+gem "puma", "~> 5.0"
 gem "rails", "~> 5.2.4.3"
 
 gem "sass-rails", "~> 6.0"
