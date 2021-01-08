@@ -9,7 +9,7 @@ gem "bcrypt", "~> 3.1.13"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "mysql2"
 gem "puma", "~> 4.3"
-gem "rails", "~> 5.2.4.3"
+gem "rails", "~> 6.1.1"
 
 gem "sass-rails", "~> 6.0"
 gem "turbolinks", "~> 5"
