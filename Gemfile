@@ -21,7 +21,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
   gem "pry"
-  gem "rspec-rails", "~> 3.9"
+  gem "rspec-rails", "~> 5.0"
   gem "rubocop", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails"
