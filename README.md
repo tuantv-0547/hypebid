@@ -1,4 +1,4 @@
-# HypeBid Project
+# HypeBid
 
 HypeBid is a traning project. The major purpose is building a stock market of things - Buy and Sell authentic streetwear.
 
